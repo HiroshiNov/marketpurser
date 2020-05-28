@@ -1,0 +1,18 @@
+<% if model.errors[:password].any? %>
+  <div id="error_explanation" class="alert alert-warning">
+    <ul class="mb-0">
+      <% model.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <%end%>
+    </ul>
+  </div>
+<% end %>
+<% if model.errors[:password_confirmation].any? %>
+  <div id="error_explanation" class="alert alert-warning">
+    <ul class="mb-0">
+      <% model.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <%end%>
+    </ul>
+  </div>
+<% end %>

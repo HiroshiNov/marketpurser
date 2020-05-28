@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
   root to: "toppages#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get "setteings", to: "users#edit"
   get "dashborad", to: "users#show"
   get "signup", to: "users#new"
 
