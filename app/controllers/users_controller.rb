@@ -33,14 +33,19 @@ require 'uri'
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      flash[:success] = 'Message は正常に更新されました'
+      flash[:success] = '正常に更新されました'
       redirect_to edit_user_path(@user)
     else
-      flash.now[:danger] = 'Message は更新されませんでした'
+      flash.now[:danger] = '更新されませんでした'
       render :edit
     end
   end
   def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+
+    flash[:success] ="退会しました。"
+    redirect_to root_url
   end
 
 private

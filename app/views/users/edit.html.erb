@@ -2,7 +2,7 @@
   <h1>SETTINGS</h1>
 </div>
 
-  <div class="row bg-seconr">
+  <div class="row bg-seconry">
     <div class="col-sm-6 offset-sm-3">
       <%= form_with(model:@user,local: true) do |f| %>
        <%= render "layouts/error_messages_name", model: f.object %>
@@ -35,5 +35,7 @@
       </div>
         <%= f.submit "SAVE" , class: "btn btn-primary" %>
       <% end %>
+      <%= link_to "DELETE ACCOUNT", @user , method: :delete, data:{confirm: "アカウントを削除してよろしいですか？" },class: "btn btn-danger" %>
+
     </div>
   </div>
