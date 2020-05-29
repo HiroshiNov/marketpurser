@@ -1,14 +1,9 @@
 class UsersController < ApplicationController
-require 'net/https'
-require 'uri'
+
 
   def show
     @user = User.find(params[:id])
-    token = 'br48hbfrh5rcrh1r2a50'
-    base_url = "https://finnhub.io/api/v1/stock/candle?symbol=AAPL&resolution=D&from=1510000000&to=1585000000&token=#{token}" 
- 
-    uri = URI.parse(base_url)
-    @response = Net::HTTP.get_response(uri) 
+
   end
 
   def new
