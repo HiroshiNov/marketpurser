@@ -1,19 +1,18 @@
 <div class="text-center">
   <h1>STOCK DETAIL</h1>
-<h2>株価名</h2>
+<h2><%= @stock.display_symbol %> : <%= @stock.name %></h2>
 </div>
-
 <div class="row">
 <div class="col-sm-8 offset-sm-2">
   <div class="text-right"><p class="btn btn-dark">ADD</p></div>
-  <div id="chart"></div>
-
-   <table class="table">
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>  
-    </table>
   </div>
 </div>
+  <% unless @result["s"] == "no_data"  %>
+    <div id="chart"></div>
+    <input name="arr" type="hidden" value=<%= @data_json %> class='arr'>
+  <% else %>
+    <div class="text-center">
+      <p>NO DATA</p>
+    </div>
+  <% end %>
+  

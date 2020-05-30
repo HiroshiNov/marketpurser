@@ -1,0 +1,26 @@
+<diV class ="text-center">
+<h1>SEARCH</h1>
+  <div class="text-right"><p class="btn btn-dark">ADD</p></div>
+      <h2>Filterable Table</h2>
+      <p>Type something in the input field to search the table for first names, last names or emails:</p>  
+      <input class="form-control" id="myInput" type="text" placeholder="Search..">
+      <br>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Symbol</th>
+            <th>Description</th>
+            <th>Info</th>
+          </tr>
+        </thead>
+        <tbody id="myTable">
+          <% @stocks.each do |stock| %>
+          <tr>
+            <td><%= link_to stock.display_symbol,stock ,data: {"turbolinks" => false} %></td>
+            <td><%= link_to stock.name, stock,data: {"turbolinks" => false} %></td>
+            <td><%= stock.info %></td>
+          </tr>
+          <% end %>
+        </tbody>
+    </table>
+</div>
