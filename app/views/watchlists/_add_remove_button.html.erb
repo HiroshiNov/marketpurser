@@ -1,0 +1,15 @@
+<% if current_user.stock_exist?(stock) %>
+  
+  <%= form_with(model: current_user.watchlists.find_by(stock_id: stock.id), local: true, method: :delete) do |f| %>
+    <%= hidden_field_tag :stock_id, stock.id %>
+    <%= f.submit 'Remove', class: 'btn btn-danger' %>
+  <% end %>
+  
+<% else %>
+  
+  <%= form_with(model: current_user.watchlists.build, local: true) do |f| %>
+    <%= hidden_field_tag :stock_id, stock.id %>
+    <%= f.submit 'Add', class: 'btn btn-success' %>
+  <% end %>
+  
+<% end %>

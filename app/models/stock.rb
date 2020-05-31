@@ -4,4 +4,6 @@ class Stock < ApplicationRecord
     def feed_comments
         Comment.where(user_id: self.commenters, stock_id: self.id)
     end
+
+    has_many :watchlists
 end

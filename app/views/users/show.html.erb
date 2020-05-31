@@ -5,14 +5,26 @@
   </div>
   <div class="row">
   <div class="col-sm-8 offset-sm-2">
-    <div class="text-right"><p class="btn btn-dark">ADD</p></div>
-  
-     <table class="table">
+     <table class="table table-striped">
+      <thead>
         <tr>
+          <th>Manage</th>
+          <th>Symbol</th>
+          <th>Description</th>
+          <th>Info</th>
+        </tr>
+      </thead>
+      <tbody>
+       <% current_user.watched_stocks.each do |s| %>
+        <tr>
+          <td><%= render 'watchlists/add_remove_button', stock: s %></td>
+          <td><%= link_to s.display_symbol,s ,data: {"turbolinks" => false} %></td>
+          <td><%= link_to s.name, s,data: {"turbolinks" => false} %></td>
+          <td><%= s.info %></td>
           <td></td>
-          <td></td>
-          <td></td>
-        </tr>  
+        </tr>
+        <% end %>
+      </tbody>
       </table>
     </div>
   </div>
