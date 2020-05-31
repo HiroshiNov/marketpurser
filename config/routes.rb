@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get "search", to: "stocks#index"
   resources :users, only: [:show,:new,:create,:edit,:update,:destroy]
   resources :stocks, only: [:show, :new, :create, :destroy]
+  resources :comments, only: [:create,:update,:destroy]
 end

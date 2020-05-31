@@ -1,4 +1,5 @@
 class StocksController < ApplicationController
+before_action :require_user_logged_in
 require 'net/https'
 require 'uri'
 require 'json'
@@ -10,6 +11,7 @@ require 'time'
 
   def show
     @stock = Stock.find(params[:id])
+    @comments = @stock.feed_comments
     symbol = @stock.symbol
     #finnhubアクセストークン
     token = 'br48hbfrh5rcrh1r2a50'

@@ -5,4 +5,8 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   has_many :comments
+  def post_comment(stock_instance,comment_params)
+      self.comments.create(stock_id: stock_instance.id, content: comment_params)
+  end
+
 end

@@ -3,11 +3,13 @@
     <h1>STOCK DETAIL</h1>
   <h2><%= @stock.display_symbol %> : <%= @stock.name %></h2>
   </div>
+  
   <div class="row">
   <div class="col-sm-8 offset-sm-2">
     <div class="text-right"><p class="btn btn-dark">ADD</p></div>
     </div>
   </div>
+  
     <% unless @result["s"] == "no_data"  %>
       <div id="chart"></div>
       <input name="arr" type="hidden" value=<%= @data_json %> class='arr'>
@@ -16,5 +18,17 @@
         <p>NO DATA</p>
       </div>
     <% end %>
-
+    
+    <%= form_with(model:current_user.comments.build ,local: true) do |c| %>
+    <%= hidden_field_tag :stock_id, @stock.id %>
+    <div class="form-group">
+      <%= c.label :content, 'Comment' %>
+      <%= c.text_area :content, class: 'form-control' %>
+    </div>
+    <%= c.submit 'SAVE', class: 'btn btn-primary btn-block' %>
+    <% end %>
+    
+    <% @comments.each do |s| %>
+      <%= s.content %>
+    <% end %>
 </div>
