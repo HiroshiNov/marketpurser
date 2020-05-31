@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_31_092607) do
+ActiveRecord::Schema.define(version: 2020_05_31_132930) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -39,6 +39,17 @@ ActiveRecord::Schema.define(version: 2020_05_31_092607) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "watchlists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "stock_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["stock_id"], name: "index_watchlists_on_stock_id"
+    t.index ["user_id"], name: "index_watchlists_on_user_id"
+  end
+
   add_foreign_key "comments", "stocks"
   add_foreign_key "comments", "users"
+  add_foreign_key "watchlists", "stocks"
+  add_foreign_key "watchlists", "users"
 end
