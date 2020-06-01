@@ -1,5 +1,7 @@
 $(document).ready(function() {
   var data_json = $('.arr').val();
+  if (data_json != null){
+    
   var data = JSON.parse(data_json);
   var options = {
     series: [{
@@ -33,5 +35,6 @@ $(document).ready(function() {
   };
   var chart = new ApexCharts(document.querySelector("#chart"), options);
   chart.render();
+  }
 });
 

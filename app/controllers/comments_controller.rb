@@ -26,8 +26,8 @@ before_action :correct_user, only: [:destroy]
   end
   def correct_user
   @comment = current_user.comments.find_by(id: params[:id])
-  unless @comment
-    redirect_to root_url
-  end
+    unless @comment
+      redirect_to root_url
+    end
   end
 end
