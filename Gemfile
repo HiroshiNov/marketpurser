@@ -62,5 +62,3 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jquery-rails' #https://github.com/rails/jquery-rails
-
-gem 'kaminari'

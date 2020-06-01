@@ -5,7 +5,7 @@ before_action :correct_user, only: [:destroy]
   def create
     stock_insatnce = Stock.find(params[:stock_id])
     current_user.post_comment(stock_insatnce,comment_params[:content])
-    flash[:success] = 'コメントを保存しました'
+    flash[:success] = 'The comment has been saved.'
     redirect_to stock_insatnce
   end
   
@@ -17,7 +17,7 @@ before_action :correct_user, only: [:destroy]
   # end
   def destroy
     @comment.destroy
-    flash[:success] = 'メッセージを削除しました。'
+    flash[:success] = 'The comment has been deleted.'
     redirect_back(fallback_location: root_path)
   end
   private

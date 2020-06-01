@@ -14,17 +14,17 @@
           <th>Info</th>
         </tr>
       </thead>
-      <tbody>
-       <% current_user.watched_stocks.each do |s| %>
-        <tr>
-          <td><%= render 'watchlists/add_remove_button', stock: s %></td>
-          <td><%= link_to s.display_symbol,s ,data: {"turbolinks" => false} %></td>
-          <td><%= link_to s.name, s,data: {"turbolinks" => false} %></td>
-          <td><%= s.info %></td>
-          <td></td>
-        </tr>
-        <% end %>
-      </tbody>
+        <tbody>
+         <% @user.watched_stocks.each do |s| %>
+          <tr>
+            <td><%= render 'watchlists/add_remove_button', stock: s %></td>
+            <td><%= link_to s.display_symbol,s ,data: {"turbolinks" => false} %></td>
+            <td><%= link_to s.name, s,data: {"turbolinks" => false} %></td>
+            <td><%= s.info %></td>
+            <td></td>
+          </tr>
+          <% end %>
+        </tbody>
       </table>
     </div>
   </div>

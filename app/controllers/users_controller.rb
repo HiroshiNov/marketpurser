@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+before_action :require_user_logged_in, only: [:show,:edit]
   def show
     @user = User.find(params[:id])
 
@@ -13,10 +13,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     
     if @user.save
-      flash[:success] = "ユーザ登録が完了しました。"
+      flash[:success] = "Registration completed successfully."
       redirect_to @user
     else
-      flash.now[:danger] = "ユーザ登録に失敗しました。"
+      flash.now[:danger] = "Registration falled."
       render :new
     end
   end
@@ -27,10 +27,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      flash[:success] = '正常に更新されました'
+      flash[:success] = 'Your infomation has successfully updated'
       redirect_to edit_user_path(@user)
     else
-      flash.now[:danger] = '更新されませんでした'
+      flash.now[:danger] = 'Your infomation has failed to update'
       render :edit
     end
   end
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
 
-    flash[:success] ="退会しました。"
+    flash[:success] ="Your account successfully deleted."
     redirect_to root_url
   end
 

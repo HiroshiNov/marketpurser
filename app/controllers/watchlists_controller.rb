@@ -4,14 +4,14 @@ class WatchlistsController < ApplicationController
   def create
     stock = Stock.find(params[:stock_id])
     current_user.add_to_list(stock)
-    flash[:success] = 'Watch Listに登録しました'
+    flash[:success] = 'Added to your Watch List.'
     redirect_back(fallback_location: user_path(current_user))
   end
 
   def destroy
     stock = Stock.find(params[:stock_id])
     current_user.remove_from_list(stock)
-    flash[:success] = 'Watch Listから削除しました。'
+    flash[:success] = 'Removed from your Watch List.'
     redirect_back(fallback_location: user_path(current_user))
   end
 end
