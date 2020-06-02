@@ -6,8 +6,7 @@ namespace :routine_task do
     require 'json'
 
       #finnhubアクセストークン
-      # token = ENV['FINNHUB'] 本番環境で有効化する。
-      token = 'br48hbfrh5rcrh1r2a50'
+      token = ENV['FINNHUB'] 
       base_url = "https://finnhub.io/api/v1/stock/symbol?exchange=US&token=#{token}"
   
       # GETリクエストを送信する

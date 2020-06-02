@@ -14,8 +14,7 @@ require 'time'
     @comments = @stock.feed_comments
     symbol = @stock.symbol
     #finnhubアクセストークン
-    # token = ENV['FINNHUB'] 本番環境で有効化する。
-    token = 'br48hbfrh5rcrh1r2a50'
+    token = ENV['FINNHUB'] 
     t = Time.current
     end_time = t.to_i
     base_url = "https://finnhub.io/api/v1/stock/candle?symbol=#{symbol}&resolution=D&from=1546268400&to=#{end_time}&token=#{token}"
