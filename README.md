@@ -2,7 +2,7 @@
 
 Finhub.ioのAPIで取得できる米国の金融商品の価格を表示するシステムです。
 Ruby on Railsを使っています。
-Finnhub.ioでユーザ登録を行い、AIPトークンを取得したものに置き換えてください。
+Finnhub.ioでユーザ登録を行い、AIPトークンを自身のものに置き換えてください。
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
