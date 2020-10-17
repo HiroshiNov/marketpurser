@@ -19,7 +19,7 @@ require 'time'
     symbol = @stock.symbol
     #finnhubアクセストークン
     # token = ENV['FINNHUB']
-    token = "br48hbfrh5rcrh1r2a50"
+    token = ""
     t = Time.current
     end_time = t.to_i
     base_url = "https://finnhub.io/api/v1/stock/candle?symbol=#{symbol}&resolution=D&from=1546268400&to=#{end_time}&token=#{token}"
