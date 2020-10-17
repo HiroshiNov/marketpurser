@@ -6,7 +6,11 @@ require 'json'
 require 'time'
 
   def index
-    @stocks = Stock.all
+    @stocks = Stock.pluck(:id, :symbol, :name, :info)
+    respond_to do |format|
+      format.html
+      format.json { render json: @stocks }
+    end
   end
 
   def show
@@ -14,7 +18,8 @@ require 'time'
     @comments = @stock.feed_comments
     symbol = @stock.symbol
     #finnhubアクセストークン
-    token = ENV['FINNHUB'] 
+    # token = ENV['FINNHUB']
+    token = "br48hbfrh5rcrh1r2a50"
     t = Time.current
     end_time = t.to_i
     base_url = "https://finnhub.io/api/v1/stock/candle?symbol=#{symbol}&resolution=D&from=1546268400&to=#{end_time}&token=#{token}"

@@ -9,19 +9,13 @@
         <table id="myTable" class="table table-bordered table-striped">
           <thead>
             <tr>
+              <th>#</th>
               <th>Symbol</th>
               <th>Description</th>
               <th>Info</th>
             </tr>
           </thead>
           <tbody id="myTable">
-            <% @stocks.each do |stock| %>
-            <tr>
-              <td><%= link_to stock.display_symbol,stock ,data: {"turbolinks" => false} %></td>
-              <td><%= link_to stock.name, stock,data: {"turbolinks" => false} %></td>
-              <td><%= stock.info %></td>
-            </tr>
-            <% end %>
           </tbody>
       </table>
   </div>

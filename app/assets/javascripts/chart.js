@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on('turbolinks:load',function() {
   var data_json = $('.arr').val();
   if (data_json != null){
     
