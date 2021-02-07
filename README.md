@@ -24,7 +24,9 @@ https://marketpurser.herokuapp.com/
   https://finnhub.io/
 
 2.以下のファイルのAIPトークンを自身のものに置き換えてください。
+
 　(1)/marketpurser/app/controllers/stocks_controller.rb
+ 
 　(2)/marketpurser/lib/tasks/routine_task.rake
 
  例えば、あなたのAPIアクセストークンがAAAAAAAAAAAなら、
@@ -35,9 +37,14 @@ https://marketpurser.herokuapp.com/
  といった感じです。
  コメントでfinhubアクセストークンと記載していますので、そちらを目印にしてください。
  
-3.以下のファイルのexchange=US&mic=XNGSの部分については、Finhub.ioのドキュメントに従って変更することで、米国以外の金融商品の価格を取得することも可能です。
-　具体的な例を言いますと、USをTに変えると東京証券取引所のデータを取得できるようになります。
-  また、mic=の後に続くXNGSは市場コード（mic Code)指定する場合に記載します。特に指定しなければすべてを取得しますので、&mic=XNGS の一文を削除してください。
+3.以下のファイルの```exchange=US&mic=XNGS```の部分については、Finhub.ioのドキュメントに従って変更することで、米国以外の金融商品の価格を取得することも可能です。
+
+  /marketpurser/lib/tasks/routine_task.rake
+
+具体的な例を言いますと、USをTに変えると東京証券取引所のデータを取得できるようになります。
+ 
+  また、```mic=```の後に続く```XNGS```は市場コード（mic Code)指定する場合に記載します。特に指定しなければすべてを取得しますので、&mic=XNGS の一文を削除してください。
+  
   これらのURLの記述についてFinhub.ioのドキュメントに従ってください。
   https://finnhub.io/docs/api/stock-symbols
   
