@@ -8,7 +8,7 @@
 
 ・今後、説明用のページSTARTとABOUTを実装予定です。
 
-#DEMO
+# DEMO
 デモサイトはこちらです。
 
 https://marketpurser.herokuapp.com/
