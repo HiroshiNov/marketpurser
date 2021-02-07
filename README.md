@@ -28,9 +28,9 @@ https://marketpurser.herokuapp.com/
 　(2)/marketpurser/lib/tasks/routine_task.rake
 
  例えば、あなたのAPIアクセストークンがAAAAAAAAAAAなら、
- token = ENV['FINNHUB'] 
+ ```token = ENV['FINNHUB'] ```
  の部分を
- token = "AAAAAAAAAAA"
+ ```token = "AAAAAAAAAAA"```
 
  といった感じです。
  コメントでfinhubアクセストークンと記載していますので、そちらを目印にしてください。
@@ -41,10 +41,10 @@ https://marketpurser.herokuapp.com/
   これらのURLの記述についてFinhub.ioのドキュメントに従ってください。
   https://finnhub.io/docs/api/stock-symbols
   
-4.最後に、bundle install、db:migrationを行ったあと、以下を実行します。これは、stocksというデータベースに株のシンボルや会社名などの情報を登録するための操作です。 
+4.最後に、```bundle install```、```db:migration```を行ったあと、以下を実行します。これは、stocksというデータベースに株のシンボルや会社名などの情報を登録するための操作です。 
 　最初にこの操作をしなかった場合、株式一覧画面に何も表示されません。
- rake routine_task:search_list_update
+ ```rake routine_task:search_list_update```
 
-準備は整いました！rails s でサーバを起動して、実行してみてください！
+準備は整いました！```rails s``` でサーバを起動して、実行してみてください！
  
 以上
