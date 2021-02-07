@@ -17,10 +17,12 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://kit.fontawesome.com/974c5dec76.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <%= render "layouts/navbar" %>
-      <%= render "layouts/flash_messages"%>
-      <%= yield %>
+    <%= render "layouts/flash_messages"%>
+    <%= yield %>
+    <%= render "layouts/footer"%>
   </body>
 </html>
