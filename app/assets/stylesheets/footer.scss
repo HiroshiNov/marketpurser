@@ -1,0 +1,21 @@
+.Footer{
+    background-color:#666;
+    text-align:center;
+
+    &__menu{
+        &List{
+            align-items:center;
+            justify-content:space-between;
+            padding:0;
+            margin:0;
+            &Item{
+                list-style:none;
+                color:white;
+            }
+        }
+    }
+    &__copyright{
+        background-color:#000;
+        color:white;
+    }
+}

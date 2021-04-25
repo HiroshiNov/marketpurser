@@ -22,7 +22,7 @@
     <h2>Comments</h2>
   </div>
     <div class="row">
-      <div class="col-sm-12">
+      <div class="Form col-sm-12">
         <%= form_with(model:current_user.comments.build ,local: true) do |c| %>
         <%= hidden_field_tag :stock_id, @stock.id %>
         <div class="form-group mt-3">
