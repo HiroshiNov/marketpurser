@@ -9,9 +9,9 @@
 ・今後、説明用のページSTARTとABOUTを実装予定です。
 
 # DEMO
-デモサイトはこちらです。
+デモサイトは~~こちらです。~~現在利用停止中です。
+~~https://marketpurser.herokuapp.com/~~
 
-https://marketpurser.herokuapp.com/
 
 ユーザ登録画面がありますが、登録メールアドレスに通知等が行くことはありませんので、example@mail.comなど、適当なもので構いません。
 登録情報は予告なく削除する可能性がありますので、ご了承ください。
@@ -34,16 +34,16 @@ https://marketpurser.herokuapp.com/
  の部分を
  ```token = "AAAAAAAAAAA"```
 
- といった感じです。
+ のように変更します。
  コメントでfinhubアクセストークンと記載していますので、そちらを目印にしてください。
  
 3.以下のファイルの```exchange=US&mic=XNGS```の部分については、Finhub.ioのドキュメントに従って変更することで、米国以外の金融商品の価格を取得することも可能です。
 
   /marketpurser/lib/tasks/routine_task.rake
 
-具体的な例を言いますと、USをTに変えると東京証券取引所のデータを取得できるようになります。
+具体的な例として、```US```を```T```に変えると東京証券取引所のデータを取得できるようになります。
  
-  また、```mic=```の後に続く```XNGS```は市場コード（mic Code)指定する場合に記載します。特に指定しなければすべてを取得しますので、&mic=XNGS の一文を削除してください。
+  また、```mic=```の後に続く```XNGS```は市場コード（mic Code)指定する場合に記載します。特に指定しなければすべてを取得しますので、'''&mic=XNGS''' の一文を削除してください。
   
   これらのURLの記述についてFinhub.ioのドキュメントに従ってください。
   https://finnhub.io/docs/api/stock-symbols
