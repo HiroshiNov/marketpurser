@@ -9,7 +9,8 @@
 ・今後、説明用のページSTARTとABOUTを実装予定です。
 
 # DEMO
-デモサイトは~~こちらです。~~現在利用停止中です。
+デモサイトは~~こちらです。
+現在利用停止中です。
 ~~https://marketpurser.herokuapp.com/~~
 
 
